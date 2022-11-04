@@ -4,10 +4,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'Hello web'
-
+    return 'Hello, web!'
 
 @app.route('/bye')
 def bye():
     returm 'Bye'
+    
 app.run(debug=True)
