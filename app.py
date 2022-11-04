@@ -8,6 +8,6 @@ def home():
 
 @app.route('/bye')
 def bye():
-    returm 'Bye'
-    
+    return 'Bye'
+
 app.run(debug=True)
