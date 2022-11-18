@@ -16,6 +16,8 @@ def home():
 @app.route('/create', methods=['POST'])
 def create():
     name = request.form['name']
-    return name
-
+    task = {'name': name, 'finished': False}
+    tasks.append(task)
+    return render_template('home.html', tasks=tasks)
+    
 app.run(debug=True)
