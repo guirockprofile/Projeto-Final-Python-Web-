@@ -1,10 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 tasks = [
     {'name': 'Estudar', 'finished': False},
-    {'name': 'Dormir', 'finished': True}
+    {'name': 'Dormir', 'finished': True},
     {'name': 'Comer', 'finished': True}
 ]
 
@@ -13,8 +13,9 @@ def home():
     #templates
     return render_template('home.html', tasks=tasks)
 
-@app.route('/bye')
-def bye():
-    return 'Bye'
+@app.route('/create')
+def create():
+    name = request.form['name']
+    return name
 
 app.run(debug=True)
