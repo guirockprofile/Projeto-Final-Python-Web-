@@ -26,7 +26,7 @@ def save():
     nome = request.form['nome']
    
     entrada= []
-    entrada.append([uuid4()], nome. data, preco)
+    entrada.append([uuid4(), nome])
 
     #da append a uma nova row no arquivo .csv
     with open('jogos.csv', 'a') as file_out:
@@ -43,13 +43,39 @@ def save():
 def delete(id):
 
     data = pd.read_csv("compras.csv")
-    data = data,set_index("Id") 
+    data = data.set_index("Id") 
 
     data.drop(id, axis='index', inplace=True)
 
     data.to_csv('jogos.csv')
 
     with open('jogos.csv', 'rt') as file_in:
+        jogos = csv.DictReader(file_in)
+        return render_template('home.html', jogos=jogos)
+
+@app.route('/update/<id>/<nome>')
+def update(id, nome):
+    lista = [id, nome]
+    return render_template('update.html', lista=lista)
+
+@app.route('/saveup', methods=['POST'])
+def saveup():
+
+    id = request.form['id']
+    nome = reques.form['nome']
+
+    data = pd.read_csv("jogos.csv")
+    
+    new_df = pd.DataFrame({'Id': [id], 'Nome': [nome]})
+
+    data = data.set_index("Id")
+    new_df = new_df.set_index("Id") 
+
+    data.update(new_df)
+
+    data.to_csv('jogos.csv')
+
+    with open('compras.csv', 'rt') as file_in:
         jogos = csv.DictReader(file_in)
         return render_template('home.html', jogos=jogos)
 

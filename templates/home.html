@@ -21,12 +21,14 @@
         <table class="table table-hover">
            <tr>
             <th>Nome</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
            </tr>
           
           {% for jogos in jogos %}
           <tr>
-           <td>{{jogo['Nome']}}</td>
-           <td><a href="/updatw/{{jogo['Id']}}/{{jogo['Nome']}}" class="btn btn-sm btn-outline-success">Editar</a></td>
+           <td>{{jogos['Nome']}}</td>
+           <td><a href="/updatw/{{jogo['Id']}}/{{jogos['Nome']}}" class="btn btn-sm btn-outline-success">Editar</a></td>
            <td><a href="/delete/{{jogo['Id']}}" class="btn-sm btn-danger">Apagar</a></td>
           </tr> 
           {% endfor %}
