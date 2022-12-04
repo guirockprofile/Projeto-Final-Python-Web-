@@ -35,9 +35,9 @@
             {% for jogos in jogos%}
             <tr>
 
-                <td>{{jogos['Nome']}}</td>
-                <td>{{jogos['Plataforma']}}</td>
-                <td><a href="/update/{{jogos['Id']}}/{{jogos['Nome']}}/{{jogos['Plataforma']}}" class="btn btn-sm btn-outline-success">Editar</a></td>
+                <td>{{jogos['nome']}}</td>
+                <td>{{jogos['plataforma']}}</td>
+                <td><a href="/update/{{jogos['Id']}}/{{jogos['nome']}}/{{jogos['plataforma']}}" class="btn btn-sm btn-outline-success">Editar</a></td>
                 <td><a href="/delete/{{jogos['Id']}}" class="btn btn-sm btn-danger">Apagar</a></td>
             </tr>
             {% endfor %}
