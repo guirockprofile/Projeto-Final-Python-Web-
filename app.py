@@ -62,7 +62,7 @@ def update(id, nome):
 def saveup():
 
     id = request.form['id']
-    nome = reques.form['nome']
+    nome = request.form['nome']
 
     data = pd.read_csv("jogos.csv")
     
