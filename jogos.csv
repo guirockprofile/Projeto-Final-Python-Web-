@@ -1,6 +1,6 @@
-Id,nome
-588dd638-c12a-4e22-85be-28f8549a1520,God of War
-1a684893-069a-4cef-8020-13dc708cd4a0,Forza Horizon
-2f75c5b9-f0d5-4eec-8398-4ac1b4c80b16,The Las of Us
-005c98be-0143-4172-93b2-f28de47aefef,Halo
-1af5b9e4-f122-427e-b60d-7672591cbcb1,Formula 1
+Id,nome,plataforma
+b594366c-e2d2-41d4-8e65-ebe3253e04fb,God of War,Playstation
+a3d194e7-4490-4e14-8ad0-9dc9aacc9358,Forza Horizon,Xbox
+738b279d-4446-41fe-8c91-1ee977cb194d,Halo,Xbox
+204e40f9-df63-4807-ac1f-c95af89cf34e,The Las of Us,Playstation
+5a216d59-ec69-4cec-9d69-c6079d3c7e9a,Resident Evil 3,PC
