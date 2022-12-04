@@ -42,7 +42,7 @@ def save():
 @app.route('/delete/<id>')
 def delete(id):
 
-    data = pd.read_csv("compras.csv")
+    data = pd.read_csv("jogos.csv")
     data = data.set_index("Id") 
 
     data.drop(id, axis='index', inplace=True)
@@ -75,7 +75,7 @@ def saveup():
 
     data.to_csv('jogos.csv')
 
-    with open('compras.csv', 'rt') as file_in:
+    with open('jogos.csv', 'rt') as file_in:
         jogos = csv.DictReader(file_in)
         return render_template('home.html', jogos=jogos)
 
