@@ -24,9 +24,10 @@ def create():
 def save():
     #pega as variaveis do forms
     nome = request.form['nome']
+    plataforma = request.form['plataforma']
    
     entrada= []
-    entrada.append([uuid4(), nome])
+    entrada.append([uuid4(), nome, plataforma])
 
     #da append a uma nova row no arquivo .csv
     with open('jogos.csv', 'a') as file_out:
@@ -53,9 +54,9 @@ def delete(id):
         jogos = csv.DictReader(file_in)
         return render_template('home.html', jogos=jogos)
 
-@app.route('/update/<id>/<nome>')
-def update(id, nome):
-    lista = [id, nome]
+@app.route('/update/<id>/<nome>/<plataforma>')
+def update(id, nome, plataforma):
+    lista = [id, nome, plataforma]
     return render_template('update.html', lista=lista)
 
 @app.route('/saveup', methods=['POST'])
@@ -63,10 +64,11 @@ def saveup():
 
     id = request.form['id']
     nome = request.form['nome']
+    plataforma = request.form['plataforma']
 
     data = pd.read_csv("jogos.csv")
     
-    new_df = pd.DataFrame({'Id': [id], 'Nome': [nome]})
+    new_df = pd.DataFrame({'Id': [id], 'Nome': [nome], 'Plataforma': [plataforma]})
 
     data = data.set_index("Id")
     new_df = new_df.set_index("Id") 
